@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mysdk-vijay"
-version = "0.2.0"
+version = "0.3.0"
 description = "A modular Python SDK for document, image, and audio AI actions powered by OpenAI."
 readme = "README.md"
 requires-python = ">=3.11"
