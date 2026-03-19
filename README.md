@@ -1,22 +1,8 @@
 # MySDK
 
-`mysdk` is a Python SDK that gives application developers simple AI actions without exposing OpenAI request details in their application code.
-
-This is the beginner stage of the SDK. It focuses on a clean foundation:
-
-- `generate_text(...)`
-- `summarize(...)`
-- `extract_keywords(...)`
-- `analyze_sentiment(...)`
-- `answer_question(...)`
-
-## Why this exists
-
-Instead of writing OpenAI client code everywhere, developers can install this SDK and call a stable, easy-to-read Python API.
+`mysdk` is a modular Python SDK that wraps OpenAI behind practical AI actions for documents, images, and audio.
 
 ## Install
-
-Install from a local checkout:
 
 ```bash
 pip install .
@@ -30,50 +16,46 @@ pip install -e .[dev]
 
 ## Environment
 
-Set your API key before using the SDK:
-
 ```powershell
 $env:OPENAI_API_KEY="your_api_key"
 ```
 
-## Quick start
+## Advanced Quick Start
 
 ```python
 from mysdk import AIActions
 
 sdk = AIActions()
 
-print(sdk.generate_text("Write a short welcome message for a new SaaS user."))
-print(sdk.summarize("Long text goes here"))
-print(sdk.extract_keywords("Python SDKs make AI integration easier for developers."))
-print(sdk.analyze_sentiment("The onboarding experience was fast and clear."))
-print(sdk.answer_question(
-    context="Paris is the capital city of France.",
+print(sdk.documents.summarize_short("Long document text"))
+print(sdk.documents.extract_keywords_detailed("Python SDKs simplify AI integration."))
+print(sdk.documents.answer_question(
+    context="Paris is the capital of France.",
     question="What is the capital of France?",
 ))
+print(sdk.images.describe("sample.png"))
+print(sdk.audio.transcribe("meeting.wav"))
 ```
+
+## Modules
+
+- `sdk.documents`: text generation, summarization, keywords, sentiment, question answering
+- `sdk.images`: image description, image question answering
+- `sdk.audio`: audio transcription and transcript summarization
 
 ## Notes
 
-- Internally, the SDK uses the official OpenAI Python library and the Responses API.
-- The default model is `gpt-5`.
-- This stage is intentionally simple. The next stages can add structured outputs, streaming, async support, retries, and richer action modules.
+- Internally, the SDK uses the official OpenAI Python library.
+- The advanced stage preserves top-level compatibility methods like `generate_text()` and `summarize()`.
+- Unit tests mock OpenAI, so `pytest` does not require a live API key.
 
-## Verify installation
-
-After installation, this should work from any folder:
+## Verify Installation
 
 ```bash
 python -c "from mysdk import AIActions; print(AIActions)"
 ```
 
-To run a real request:
-
-```bash
-python -c "from mysdk import AIActions; print(AIActions().summarize('OpenAI provides APIs for building AI applications.'))"
-```
-
-## Run tests
+## Run Tests
 
 ```bash
 pytest

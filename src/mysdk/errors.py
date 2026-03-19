@@ -20,3 +20,7 @@ class AIConnectionError(AIActionError):
 
 class AIResponseFormatError(AIActionError):
     """Raised when the model response cannot be parsed into the expected format."""
+
+
+class AIFileError(AIActionError):
+    """Raised when an SDK file input is missing or invalid."""
