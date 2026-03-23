@@ -3,8 +3,8 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mysdk-vijay"
-version = "0.3.0"
+name = "openai-ai-actions-sdk"
+version = "0.3.1"
 description = "A modular Python SDK for document, image, and audio AI actions powered by OpenAI."
 readme = "README.md"
 requires-python = ">=3.11"
