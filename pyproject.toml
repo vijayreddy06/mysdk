@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openai-ai-actions-sdk"
-version = "0.3.1"
-description = "A modular Python SDK for document, image, and audio AI actions powered by OpenAI."
+version = "0.3.2"
+description = "A Python SDK for document, image, and audio AI actions powered by OpenAI."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}

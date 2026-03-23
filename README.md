@@ -1,8 +1,8 @@
-# MySDK
+# OpenAI AI Actions SDK
 
-`mysdk-vijay` is a modular Python SDK that wraps OpenAI behind practical AI actions for documents, images, and audio.
+`openai-ai-actions-sdk` is a Python SDK for common AI tasks across documents, images, and audio.
 
-The goal of this SDK is to let developers call a clean Python API instead of writing raw OpenAI request code throughout their applications.
+It provides simple actions like summarization, keyword extraction, image understanding, question answering, transcription, and transcript summarization, while hiding the lower-level OpenAI API request handling from application code.
 
 ## What The SDK Can Do
 
@@ -39,7 +39,7 @@ The package also keeps backward-compatible shortcuts like:
 Install the package normally:
 
 ```bash
-pip install mysdk-vijay
+pip install openai-ai-actions-sdk
 ```
 
 If you are working from the source repo locally:
